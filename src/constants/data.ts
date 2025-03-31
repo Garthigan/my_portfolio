@@ -80,7 +80,7 @@ export const experience: TimelineItem[] = [
   {
     id: 3,
     date: "2023 - 2024",
-    title: "InternMachine Learning Engineer",
+    title: "Intern Machine Learning Engineer",
     company: "SenzMate AIOT Intelligence",
     description: "Developed and deployed SenzView, a real-time people detection system using YOLO on the Nvidia Jetson Nano, ensuring accurate and efficient identification of individuals in live video streams.",
     technologies: ["Python", "TensorFlow", "MQTT", "Jetson Nano" , "C++", "CUDA"]
@@ -118,7 +118,7 @@ export const education = [
     year: "2021-2025"
   },
   {
-    highschool: "Advanced Level - Physical Science Stream",
+    degree: "Advanced Level - Physical Science Stream",
     specialization: "3A , District Rank : 19 , Island Rank : 198",
     institution: "Jaffna Hindu College ",
     year: "2011-2019"
@@ -152,5 +152,5 @@ export const aboutMe = {
   name: "Garthigan Kumarasamy",
   role: "Machine Learning & Data Engineer",
   summary: "I'm a passionate machine learning and data engineer with over 1 years of experience building scalable AI systems and data pipelines. I specialize in developing and deploying machine learning models that solve real-world problems, with expertise in computer vision, natural language processing, and predictive analytics. I enjoy working at the intersection of cutting-edge AI research and practical engineering to create solutions that drive business value.",
-  personalInterests: [ "Participating in Kaggle competitions", "Contributing to open-source ML libraries", "Hiking and outdoor photography" , "Playing Cricket" , "Watching Series" , "Teaching "]
+  personalInterests: [ "Participating in Kaggle competitions", "Contributing to open-source ML libraries", "Hiking and outdoor photography" , "Playing Cricket" , "Watching Series" , "Teaching ", "Videography" ,"Video Editing","Designing"]
 };

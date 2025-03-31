@@ -71,10 +71,18 @@ export const experience: TimelineItem[] = [
   },
   {
     id: 2,
-    date: "2023 - ",
+    date: "2024 - ",
     title: "Associate Machine Learning Engineer",
     company: "SenzMate AIOT Intelligence",
-    description: "Developed and deployed a real-time people detection system using YOLO on the Nvidia Jetson Nano, achieving accurate detection with a processing speed of 50 frames per second.",
+    description: "Conducted R&D on the SenzView and Polar projects, developing and deploying real-time people detection using YOLO on the Nvidia Jetson Nano while exploring innovative solutions in computer vision and edge AI.",
+    technologies: ["Python", "TensorFlow", "MQTT", "Jetson Nano" , "C++", "CUDA"]
+  },
+  {
+    id: 3,
+    date: "2023 - 2024",
+    title: "InternMachine Learning Engineer",
+    company: "SenzMate AIOT Intelligence",
+    description: "Developed and deployed SenzView, a real-time people detection system using YOLO on the Nvidia Jetson Nano, ensuring accurate and efficient identification of individuals in live video streams.",
     technologies: ["Python", "TensorFlow", "MQTT", "Jetson Nano" , "C++", "CUDA"]
   }
 ];
@@ -108,6 +116,12 @@ export const education = [
     specialization: "Electrical Engineering Department",
     institution: "University of Moratuwa",
     year: "2021-2025"
+  },
+  {
+    highschool: "Advanced Level - Physical Science Stream",
+    specialization: "3A , District Rank : 19 , Island Rank : 198",
+    institution: "Jaffna Hindu College ",
+    year: "2011-2019"
   }
 ];
 

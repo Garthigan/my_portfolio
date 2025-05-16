@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,6 +20,11 @@ const Navbar = () => {
     // Close mobile menu when route changes
     setIsMenuOpen(false);
   }, [location.pathname]);
+
+  const handleDownloadCV = () => {
+    // Replace 'your-cv.pdf' with your actual CV filename
+    window.open("public/assets/Garthi_Final.pdf", "_blank");
+  };
 
   const navItems = [
     { path: "/", label: "Home" },
@@ -44,7 +49,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <NavLink
                 key={item.path}
@@ -56,6 +61,13 @@ const Navbar = () => {
                 {item.label}
               </NavLink>
             ))}
+            <button
+              onClick={handleDownloadCV}
+              className="flex items-center gap-2 px-4 py-2 rounded-md bg-accent text-white hover:bg-accent/90 transition-colors"
+            >
+              <Download className="w-4 h-4" />
+              <span>Download CV</span>
+            </button>
           </nav>
 
           {/* Mobile menu button */}
@@ -93,6 +105,13 @@ const Navbar = () => {
                 {item.label}
               </NavLink>
             ))}
+            <button
+              onClick={handleDownloadCV}
+              className="flex items-center gap-2 w-full px-4 py-4 text-lg hover:text-accent"
+            >
+              <Download className="w-5 h-5" />
+              <span>Download CV</span>
+            </button>
           </div>
         </div>
       )}

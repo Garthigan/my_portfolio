@@ -2,8 +2,44 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { aboutMe } from "@/constants/data";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [showFullStop, setShowFullStop] = useState(false);
+
+  useEffect(() => {
+    const fullName = aboutMe.name.split(" ");
+    const first = fullName[0];
+    const last = fullName[1];
+
+    let currentIndexFirst = 0;
+    let currentIndexLast = 0;
+
+    const intervalFirst = setInterval(() => {
+      if (currentIndexFirst <= first.length) {
+        setFirstName(first.substring(0, currentIndexFirst));
+        currentIndexFirst++;
+      } else {
+        clearInterval(intervalFirst);
+        const intervalLast = setInterval(() => {
+          if (currentIndexLast <= last.length) {
+            setLastName(last.substring(0, currentIndexLast));
+            currentIndexLast++;
+          } else {
+            clearInterval(intervalLast);
+            setShowFullStop(true);
+          }
+        }, 200); // Slower typing speed for last name
+      }
+    }, 200); // Slower typing speed for first name
+
+    return () => {
+      clearInterval(intervalFirst);
+    };
+  }, []);
+
   return (
     <section className="min-h-screen flex flex-col justify-center relative overflow-hidden">
       {/* Background photo only on the right side with reduced vertical coverage */}
@@ -30,8 +66,10 @@ const Hero = () => {
               className="heading-xl mb-6 animate-fade-in"
               style={{ animationDelay: "100ms" }}
             >
-              Hi, I'm {aboutMe.name}
-              <span className="text-accent">.</span>
+              Hi, I'm <br />
+              {firstName} <br />
+              {lastName}
+              {showFullStop && <span className="text-accent">.</span>}
             </h1>
             <p
               className="text-lg sm:text-xl text-muted-foreground mb-8 animate-fade-in"
@@ -72,13 +110,16 @@ const Hero = () => {
               <div className="absolute -inset-2 bg-accent/5 rounded-full" />
 
               {/* Photo container */}
-              <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl">
+              <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl transition-transform duration-300 hover:scale-110 group">
                 <img
                   src="/images/1.jpg"
                   alt="Garthi's profile photo"
                   className="w-full h-full object-cover"
                   style={{ objectPosition: "center -5%" }}
                 />
+                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Since 2000
+                </div>
               </div>
             </div>
           </div>

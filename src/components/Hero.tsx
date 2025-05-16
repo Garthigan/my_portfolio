@@ -42,16 +42,6 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen flex flex-col justify-center relative overflow-hidden">
-      {/* Background photo only on the right side with reduced vertical coverage */}
-      <div className="absolute top-1 right-0 h-3/3 w-1/2 pointer-events-none select-none">
-        <img
-          src="/images/1.jpg"
-          alt="Background"
-          className="w-full h-full object-cover object-right-top opacity-[0.2] rounded-l-full"
-          style={{ objectPosition: "right top" }}
-        />
-      </div>
-
       {/* Background decorative elements */}
       <div className="absolute -top-24 -right-24 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
       <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />

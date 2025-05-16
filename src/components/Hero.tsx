@@ -9,7 +9,7 @@ const Hero = () => {
       {/* Background photo only on the right side with reduced vertical coverage */}
       <div className="absolute top-1 right-0 h-3/3 w-1/2 pointer-events-none select-none">
         <img
-          src="public/images/1.jpg"
+          src="/images/1.jpg"
           alt="Background"
           className="w-full h-full object-cover object-right-top opacity-[0.2] rounded-l-full"
           style={{ objectPosition: "right top" }}
@@ -74,7 +74,7 @@ const Hero = () => {
               {/* Photo container */}
               <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl">
                 <img
-                  src="public/images/1.jpg"
+                  src="/images/1.jpg"
                   alt="Garthi's profile photo"
                   className="w-full h-full object-cover"
                   style={{ objectPosition: "center -5%" }}

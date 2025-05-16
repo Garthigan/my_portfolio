@@ -23,7 +23,7 @@ const Navbar = () => {
 
   const handleDownloadCV = () => {
     // Replace 'your-cv.pdf' with your actual CV filename
-    window.open("public/assets/Garthi_Final.pdf", "_blank");
+    window.open("/assets/Garthi_Final.pdf", "_blank");
   };
 
   const navItems = [
